@@ -697,7 +697,7 @@ class CropperPage extends Component<CropperPageProps, State> {
       resizeMode: 'stretch',
     } as ImageCropData;
     // we need to use this function because otherwise the crop may not work properly (see https://github.com/callstack/react-native-image-editor/issues/54)
-    ImageResizer(this.props.imageUri, imageWidth, imageHeight, 'JPEG', 100, Platform.OS === 'ios' ? 0 : this.state.rotation, undefined, false, {
+    ImageResizer.createResizedImage(this.props.imageUri, imageWidth, imageHeight, 'JPEG', 100, Platform.OS === 'ios' ? 0 : this.state.rotation, undefined, false, {
       mode: 'cover',
       onlyScaleDown: true,
     })
